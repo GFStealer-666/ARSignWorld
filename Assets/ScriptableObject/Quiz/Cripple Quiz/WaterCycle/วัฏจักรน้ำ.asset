@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20616ab20fb19a741ae718926eb64e38, type: 3}
+  m_Name: "\u0E27\u0E31\u0E0F\u0E08\u0E31\u0E01\u0E23\u0E19\u0E49\u0E33"
+  m_EditorClassIdentifier: 
+  topicName: "\u0E27\u0E31\u0E10\u0E08\u0E31\u0E01\u0E23\u0E19\u0E49\u0E33"
+  quizUserType: 1
+  quizList:
+  - {fileID: 11400000, guid: c72cdc718a285ae438dd6268dd6ebd09, type: 2}
+  - {fileID: 11400000, guid: 520e3380d4d8ed145b1adf6d019242df, type: 2}
+  - {fileID: 11400000, guid: df1f7c67abf48e5449cd199fea1e07ba, type: 2}
+  - {fileID: 11400000, guid: 34e51448f0b4acb4fb9c9fd55eefc12b, type: 2}
+  - {fileID: 11400000, guid: 0ab122920540a0d4faf744618e3e0c31, type: 2}

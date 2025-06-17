@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20616ab20fb19a741ae718926eb64e38, type: 3}
+  m_Name: "\u0E19\u0E49\u0E33\u0E02\u0E36\u0E49\u0E19 \u0E19\u0E49\u0E33\u0E25\u0E07"
+  m_EditorClassIdentifier: 
+  topicName: "\u0E19\u0E49\u0E33\u0E02\u0E36\u0E49\u0E19 \u0E19\u0E49\u0E33\u0E25\u0E07"
+  quizList:
+  - {fileID: 11400000, guid: 6a5129bec29376e4bbadb06e962fd2b3, type: 2}
+  - {fileID: 11400000, guid: 684fa70683b1faa4283e5f9bc39cffb9, type: 2}
+  - {fileID: 11400000, guid: 504401118a2028b40a0e30e92fe20ccf, type: 2}
+  - {fileID: 11400000, guid: 1a6496ea13ef0ee4b9a722b1d2ae3244, type: 2}
+  - {fileID: 11400000, guid: faaf2afae4cf75445bc2ec5448aa62fa, type: 2}
+  - {fileID: 11400000, guid: 084be9fdc3d5ab5459754cea3160461f, type: 2}
+  - {fileID: 11400000, guid: 36e9af3b4a572ad489f097afefc45980, type: 2}
+  - {fileID: 11400000, guid: 68943cf9f2e04454aab8f344fc814f23, type: 2}
+  - {fileID: 11400000, guid: 4ae571d865da0c843b1fc3c6df3ebeb6, type: 2}
+  - {fileID: 11400000, guid: 6d5ea8a3322bb364ab4d9ad8b84733b4, type: 2}

@@ -1,0 +1,78 @@
+int GetMaxStreak(List<AnswerDetail> answers)
+{
+    int maxStreak = 0, currentStreak = 0;
+    foreach (var a in answers.OrderBy(x => x.timestamp))
+    {
+        if (a.isCorrect) currentStreak++;
+        else currentStreak = 0;
+        if (currentStreak > maxStreak) maxStreak = currentStreak;
+    }
+    return maxStreak;
+}
+
+var streaks = players
+    .GroupBy(p => p.userName)
+    .Select(g => new { 
+        Name = g.Key, 
+        MaxStreak = g.SelectMany(x => x.answerDetails).ToList().Count > 0 ? 
+            GetMaxStreak(g.SelectMany(x => x.answerDetails).ToList()) : 0 
+    })
+    .OrderByDescending(x => x.MaxStreak)
+    .ToList();
+
+var topStreak = streaks.FirstOrDefault();
+if (topStreak != null)
+    EditorGUILayout.LabelField($"Longest Streak: {topStreak.Name} ({topStreak.MaxStreak} correct)");
+
+//
+var quickest = players
+    .SelectMany(p => p.answerDetails.Select(a => new { p.userName, a.timeToAnswer }))
+    .OrderBy(x => x.timeToAnswer)
+    .FirstOrDefault();
+
+if (quickest != null)
+    EditorGUILayout.LabelField($"Quickest Answer: {quickest.userName} ({quickest.timeToAnswer} sec)");
+//
+
+var mostActive = players
+    .GroupBy(p => p.userName)
+    .OrderByDescending(g => g.Count())
+    .FirstOrDefault();
+
+if (mostActive != null)
+    EditorGUILayout.LabelField($"Most Active: {mostActive.Key} ({mostActive.Count()} games)");
+//
+
+var allAnswers = players.SelectMany(p => p.answerDetails);
+var hardest = allAnswers
+    .GroupBy(a => a.questionId)
+    .Select(g => new { QuestionId = g.Key, IncorrectCount = g.Count(a => !a.isCorrect) })
+    .OrderByDescending(x => x.IncorrectCount)
+    .FirstOrDefault();
+
+if (hardest != null)
+    EditorGUILayout.LabelField($"Hardest Question: {hardest.QuestionId} ({hardest.IncorrectCount} incorrect)");
+//
+var improvements = players
+    .GroupBy(p => p.userName)
+    .Select(g => new { 
+        Name = g.Key, 
+        Improvement = g.OrderBy(x => x.timestamp).Last().score - g.OrderBy(x => x.timestamp).First().score 
+    })
+    .OrderByDescending(x => x.Improvement)
+    .ToList();
+
+var mostImproved = improvements.FirstOrDefault();
+if (mostImproved != null)
+    EditorGUILayout.LabelField($"Most Improved: {mostImproved.Name} (+{mostImproved.Improvement} points)");
+
+// 
+var top1Counts = players
+    .GroupBy(p => p.userName)
+    .Select(g => new { Name = g.Key, Top1Count = g.Count(x => x.rank == 1) })
+    .OrderByDescending(x => x.Top1Count)
+    .ToList();
+
+var mostFrequentTop1 = top1Counts.FirstOrDefault();
+if (mostFrequentTop1 != null)
+    EditorGUILayout.LabelField($"Most Frequent Top 1: {mostFrequentTop1.Name} ({mostFrequentTop1.Top1Count} times)");

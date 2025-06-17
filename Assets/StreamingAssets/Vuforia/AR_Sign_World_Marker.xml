@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="Air_Cycle" size="100.000000 50.000000" />
+    <ImageTarget name="Rock_Cycle" size="100.000000 50.000000" />
+    <ImageTarget name="Water_Cycle" size="100.000000 50.000000" />
+    <ImageTarget name="LandBreeze_SeaBreeze" size="100.000000 50.000000" />
+    <ImageTarget name="Tide_Current" size="100.000000 50.000000" />
+    <ImageTarget name="Atmosphere" size="100.000000 50.000000" />
+    <ImageTarget name="Soil_Layer" size="100.000000 50.000000" />
+    <ImageTarget name="DayNight_Cycle" size="100.000000 50.000000" />
+    <ImageTarget name="Wind_Current" size="100.000000 50.000000" />
+    <ImageTarget name="Earth_Layer" size="100.000000 50.000000" />
+  </Tracking>
+</QCARConfig>
